@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* 
+  Global styles for the tourism route web app.
+  The visual identity combines historical colors with a modern mobile-first interface.
+*/
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  --color-deep-green: #1f3a2e;
+  --color-antique-beige: #e8d8b8;
+  --color-warm-gold: #c9a24d;
+  --color-stone-gray: #6b6b6b;
+  --color-dark-brown: #2b2118;
+  --color-off-white: #f8f4ea;
+  --color-soft-black: #12100d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--color-soft-black);
+  color: var(--color-off-white);
+}
+
+/* 
+  Custom scrollbar.
+  This gives the page a more polished look on desktop while keeping mobile clean.
+*/
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9a24d;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e0b85a;
+}
+
+/*
+  Leaflet map custom styles.
+  These styles make the map match the visual identity of the route.
+*/
+
+.leaflet-container {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: #1f3a2e;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 20px;
+  padding: 4px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+.leaflet-popup-content {
+  margin: 12px;
+}
+
+.leaflet-popup-tip {
+  background: #f8f4ea;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25) !important;
+}
+
+.leaflet-control-zoom a {
+  background: #f8f4ea !important;
+  color: #1f3a2e !important;
+  border: none !important;
+  font-weight: 900;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #c9a24d !important;
+  color: #12100d !important;
+}
