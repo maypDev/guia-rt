@@ -6,8 +6,8 @@ import {
   MapPin,
   Navigation,
 } from "lucide-react";
-import { routeStops } from "../../data/stops";
-import type { RouteStop } from "../../types/route";
+import { interpretiveRouteMoments } from "../../data/routeMoments";
+import type { RouteMoment } from "../../types/route";
 import { ArExperienceCard } from "../ui/ArExperienceCard";
 import { AudioPlayer } from "../ui/AudioPlayer";
 import { ImageWithFallback } from "../ui/ImageWithFallback";
@@ -15,9 +15,8 @@ import { ImageWithFallback } from "../ui/ImageWithFallback";
 /**
  * StopDetailsSection component
  *
- * Renders the detailed content of every route stop.
- * Each detail block works as a destination for the "Ver parada" buttons
- * and for future QR links.
+ * Renders detailed content only for interpretive stops.
+ * Operational points are handled in the SupportPointsSection.
  */
 export function StopDetailsSection() {
   return (
@@ -25,7 +24,6 @@ export function StopDetailsSection() {
       id="detalles"
       className="relative overflow-hidden bg-[#12100d] px-4 py-20 text-[#F8F4EA]"
     >
-      {/* Decorative background */}
       <div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-[#1F3A2E]/40 blur-3xl" />
       <div className="absolute bottom-20 left-0 h-96 w-96 rounded-full bg-[#C9A24D]/10 blur-3xl" />
 
@@ -37,7 +35,7 @@ export function StopDetailsSection() {
           </div>
 
           <h2 className="text-3xl font-black leading-tight sm:text-4xl">
-            Explora cada punto de la ruta
+            Explora el contenido interpretativo de cada parada
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#E8D8B8]/75">
@@ -47,16 +45,16 @@ export function StopDetailsSection() {
         </div>
 
         <div className="space-y-16">
-          {routeStops.map((stop, index) => {
-            const previousStop = routeStops[index - 1];
-            const nextStop = routeStops[index + 1];
+          {interpretiveRouteMoments.map((moment, index) => {
+            const previousMoment = interpretiveRouteMoments[index - 1];
+            const nextMoment = interpretiveRouteMoments[index + 1];
 
             return (
               <StopDetailCard
-                key={stop.id}
-                stop={stop}
-                previousStop={previousStop}
-                nextStop={nextStop}
+                key={moment.id}
+                moment={moment}
+                previousMoment={previousMoment}
+                nextMoment={nextMoment}
               />
             );
           })}
@@ -66,30 +64,24 @@ export function StopDetailsSection() {
   );
 }
 
-/**
- * StopDetailCard component
- *
- * Displays the full information and interaction options for a single stop.
- */
 function StopDetailCard({
-  stop,
-  previousStop,
-  nextStop,
+  moment,
+  previousMoment,
+  nextMoment,
 }: {
-  stop: RouteStop;
-  previousStop?: RouteStop;
-  nextStop?: RouteStop;
+  moment: RouteMoment;
+  previousMoment?: RouteMoment;
+  nextMoment?: RouteMoment;
 }) {
   return (
     <article
-      id={`detalle-${stop.id}`}
+      id={`detalle-${moment.id}`}
       className="scroll-mt-24 overflow-hidden rounded-[2rem] border border-white/10 bg-[#F8F4EA] text-[#2B2118] shadow-2xl shadow-black/30"
     >
-      {/* Main image */}
       <div className="relative h-72 overflow-hidden sm:h-96">
         <ImageWithFallback
-          src={stop.image}
-          alt={stop.title}
+          src={moment.image ?? ""}
+          alt={moment.place}
           className="h-full w-full object-cover"
         />
 
@@ -97,25 +89,24 @@ function StopDetailCard({
 
         <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#C9A24D] px-4 py-2 text-xs font-black text-[#12100d]">
-            Parada {stop.number} de {routeStops.length}
+            Parada {moment.routeStopNumber} de {interpretiveRouteMoments.length}
           </div>
 
           <h3 className="text-3xl font-black leading-tight text-[#F8F4EA] sm:text-4xl">
-            {stop.title}
+            {moment.place}
           </h3>
 
           <p className="mt-2 text-sm font-bold text-[#C9A24D] sm:text-base">
-            {stop.theme}
+            {moment.theme}
           </p>
         </div>
       </div>
 
-      {/* Content */}
       <div className="grid gap-6 p-5 sm:p-8 lg:grid-cols-[1fr_0.9fr]">
         <div>
           <div className="mb-5 flex flex-wrap gap-2">
-            <InfoPill icon={<Clock size={14} />} label={stop.duration} />
-            <InfoPill icon={<MapPin size={14} />} label="Ubicación" />
+            <InfoPill icon={<Clock size={14} />} label={`${moment.startTime} - ${moment.endTime}`} />
+            <InfoPill icon={<Clock size={14} />} label={moment.duration} />
             <InfoPill icon={<Navigation size={14} />} label="Recorrido" />
           </div>
 
@@ -124,7 +115,7 @@ function StopDetailCard({
           </h4>
 
           <p className="mt-4 text-base leading-8 text-[#4A4036]">
-            {stop.description}
+            {moment.description}
           </p>
 
           <div className="mt-6 rounded-3xl border border-[#C9A24D]/25 bg-[#C9A24D]/10 p-5">
@@ -139,15 +130,17 @@ function StopDetailCard({
           </div>
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={stop.googleMapsUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1F3A2E] px-6 py-4 text-sm font-black text-[#F8F4EA] shadow-lg shadow-[#1F3A2E]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#C9A24D] hover:text-[#12100d] active:translate-y-0"
-            >
-              Abrir en Google Maps
-              <ExternalLink size={17} />
-            </a>
+            {moment.googleMapsUrl && (
+              <a
+                href={moment.googleMapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1F3A2E] px-6 py-4 text-sm font-black text-[#F8F4EA] shadow-lg shadow-[#1F3A2E]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#C9A24D] hover:text-[#12100d] active:translate-y-0"
+              >
+                Abrir en Google Maps
+                <ExternalLink size={17} />
+              </a>
+            )}
 
             <a
               href="#paradas"
@@ -159,21 +152,24 @@ function StopDetailCard({
         </div>
 
         <div className="space-y-5">
-          <AudioPlayer audioUrl={stop.audioUrl} title={stop.shortTitle} />
+          {moment.audioUrl && (
+            <AudioPlayer audioUrl={moment.audioUrl} title={moment.place} />
+          )}
 
-          <ArExperienceCard
-            arUrl={stop.arUrl}
-            markerImage={stop.markerImage}
-            title={stop.title}
-          />
+          {moment.arUrl && (
+            <ArExperienceCard
+              arUrl={moment.arUrl}
+              markerImage={moment.markerImage}
+              title={moment.place}
+            />
+          )}
         </div>
       </div>
 
-      {/* Previous and next navigation */}
       <div className="flex flex-col gap-3 border-t border-[#1F3A2E]/10 bg-white/60 p-5 sm:flex-row sm:justify-between sm:p-6">
-        {previousStop ? (
+        {previousMoment ? (
           <a
-            href={`#detalle-${previousStop.id}`}
+            href={`#detalle-${previousMoment.id}`}
             className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1F3A2E]/15 bg-white px-5 py-3 text-sm font-black text-[#1F3A2E] transition-all duration-300 hover:-translate-y-1 hover:border-[#C9A24D] hover:bg-[#C9A24D]/15"
           >
             <ArrowLeft size={17} />
@@ -183,9 +179,9 @@ function StopDetailCard({
           <div />
         )}
 
-        {nextStop ? (
+        {nextMoment ? (
           <a
-            href={`#detalle-${nextStop.id}`}
+            href={`#detalle-${nextMoment.id}`}
             className="inline-flex items-center justify-center gap-2 rounded-full bg-[#C9A24D] px-5 py-3 text-sm font-black text-[#12100d] transition-all duration-300 hover:-translate-y-1 hover:bg-[#E0B85A]"
           >
             Siguiente parada
@@ -205,11 +201,6 @@ function StopDetailCard({
   );
 }
 
-/**
- * InfoPill component
- *
- * Small visual pill used for stop metadata.
- */
 function InfoPill({
   icon,
   label,

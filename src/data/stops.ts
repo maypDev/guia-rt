@@ -103,7 +103,7 @@ export const routeStops: RouteStop[] = [
     theme: "Homenaje y memoria",
     description:
       "Este espacio invita al respeto, la memoria y el reconocimiento de quienes formaron parte de este acontecimiento histórico.",
-    coordinates: [-17.9810816, -67.1128683],
+    coordinates: [-17.9810867, -67.1102934],
     image: `${BASE_URL}/images/cementerio-general.jpg`,
     audioUrl: `${BASE_URL}/audios/06-cementerio.mp3`,
     arUrl: "https://www.kivicube.com/scenes/laiK1053QlHBiurufv2hvUDuES5Z8dXU",

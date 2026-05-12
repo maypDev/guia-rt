@@ -8,6 +8,8 @@ import {
   MessageSquareText,
   Route,
   X,
+  Clock, 
+  Sparkles 
 } from "lucide-react";
 
 /**
@@ -46,6 +48,16 @@ export function Header() {
       label: "Mapa",
       href: "#mapa",
       icon: <Map size={18} />,
+    },
+    {
+      label: "Itinerario",
+      href: "#itinerario",
+      icon: <Clock size={18} />,
+    },
+    {
+      label: "Puntos de apoyo",
+      href: "#puntos-apoyo",
+      icon: <Sparkles size={18} />,
     },
     {
       label: "Paradas",

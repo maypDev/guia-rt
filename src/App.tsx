@@ -2,15 +2,16 @@ import { Header } from "./components/layout/Header";
 import { AboutSection } from "./components/sections/AboutSection";
 import { FeedbackSection } from "./components/sections/FeedbackSection";
 import { HeroSection } from "./components/sections/HeroSection";
+import { ItinerarySection } from "./components/sections/ItinerarySection";
 import { RouteMapSection } from "./components/sections/RouteMapSection";
 import { StopDetailsSection } from "./components/sections/StopDetailsSection";
+import { SupportPointsSection } from "./components/sections/SupportPointsSection";
 import { TimelineStops } from "./components/sections/TimelineStops";
 
 /**
  * Main application component
  *
  * This component organizes the one-page tourism guide.
- * The page is built section by section to keep the architecture clean.
  */
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
       <HeroSection />
       <AboutSection />
       <RouteMapSection />
+      <ItinerarySection />
       <TimelineStops />
+      <SupportPointsSection />
       <StopDetailsSection />
       <FeedbackSection />
     </main>

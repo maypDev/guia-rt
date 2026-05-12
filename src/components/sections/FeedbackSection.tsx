@@ -15,7 +15,7 @@ import {
  */
 export function FeedbackSection() {
   const feedbackFormUrl =
-    "https://docs.google.com/forms/d/e/1FAIpQLSeTCHFlGHJYPLXuk19dp71vUveSkvOYVWKamD1q-KUgn50nyQ/viewform";
+    "https://docs.google.com/forms/d/e/1FAIpQLSevWP9UVi4C_Ucq7gI1D6-zAn3LZetmwqIYELiBSYZAOt9J7w/viewform?pli=1";
 
   return (
     <section
