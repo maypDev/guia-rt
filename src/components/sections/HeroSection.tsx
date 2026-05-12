@@ -73,11 +73,11 @@ export function HeroSection() {
         </div>
 
         {/* Feature preview cards */}
-        <div className="mt-12 grid w-full max-w-3xl grid-cols-3 gap-3">
+        {/* <div className="mt-12 grid w-full max-w-3xl grid-cols-3 gap-3">
           <FeatureCard title="Mapa" description="Recorrido guiado" />
           <FeatureCard title="Audio" description="Relatos breves" />
           <FeatureCard title="RA" description="Contenido digital" />
-        </div>
+        </div> */}
       </div>
     </section>
   );

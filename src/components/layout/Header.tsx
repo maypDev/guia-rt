@@ -20,6 +20,7 @@ type NavigationItem = {
   href: string;
   icon: React.ReactNode;
 };
+import logo from "../../assets/logo.png";
 
 /**
  * Header component
@@ -93,7 +94,7 @@ export function Header() {
             className="flex items-center gap-2 no-underline"
           >
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#C9A24D]/20 text-[#C9A24D] ring-1 ring-[#C9A24D]/40">
-              <MapPin size={17} />
+              <img src={logo} alt="Logo de la ruta" className="h-8 w-8" />
             </div>
 
             <div className="leading-tight">

@@ -29,7 +29,7 @@ export const routeStops: RouteStop[] = [
     arUrl: "https://www.kivicube.com/scenes/laiK1053QlHBiurufv2hvUDuES5Z8dXU",
     markerImage: `${BASE_URL}/markers/marker-parque.jpeg`,
     googleMapsUrl: "https://www.google.com/maps/place/Parque+M.+Postel/@-17.970818,-67.1179976,17z/data=!4m14!1m7!3m6!1s0x93e2b0961d8fffff:0xdca37ba55d12e377!2sParque+M.+Postel!8m2!3d-17.970818!4d-67.1179976!16s%2Fg%2F11y02gnh8g!3m5!1s0x93e2b0961d8fffff:0xdca37ba55d12e377!8m2!3d-17.970818!4d-67.1179976!16s%2Fg%2F11y02gnh8g?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D",
-    duration: "15 min",
+    duration: "30 min",
   },
   {
     id: "museo-historico",
@@ -93,7 +93,7 @@ export const routeStops: RouteStop[] = [
     arUrl: "https://www.kivicube.com/scenes/laiK1053QlHBiurufv2hvUDuES5Z8dXU",
     markerImage: `${BASE_URL}/markers/marker-estacion.jpeg`,
     googleMapsUrl: "https://www.google.com/maps/place/Estaci%C3%B3n+de+Trenes/@-17.9740178,-67.1100848,17z/data=!4m14!1m7!3m6!1s0x93e2b0b8e7583359:0x519d777361ae5745!2sEstaci%C3%B3n+de+Trenes!8m2!3d-17.9740178!4d-67.1100848!16s%2Fg%2F1tdrydf5!3m5!1s0x93e2b0b8e7583359:0x519d777361ae5745!8m2!3d-17.9740178!4d-67.1100848!16s%2Fg%2F1tdrydf5?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D",
-    duration: "35 min",
+    duration: "30 min",
   },
   {
     id: "cementerio-general",
