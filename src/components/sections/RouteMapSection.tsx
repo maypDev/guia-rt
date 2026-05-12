@@ -87,7 +87,7 @@ export function RouteMapSection() {
               <Polyline
                 positions={routePathCoordinates}
                 pathOptions={{
-                  color: "#C9A24D",
+                  color: "#12100dcb",
                   weight: 5,
                   opacity: 0.9,
                 }}
