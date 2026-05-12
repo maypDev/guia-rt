@@ -46,8 +46,8 @@ export function HeroSection() {
 
         {/* Information badges */}
         <div className="mt-7 flex flex-wrap justify-center gap-3">
-          <InfoBadge icon={<Clock size={16} />} label="3 h 30 min" />
-          <InfoBadge icon={<Map size={16} />} label="6 paradas" />
+          <InfoBadge icon={<Clock size={16} />} label="4 h 45 min" />
+          <InfoBadge icon={<Map size={16} />} label="5 paradas" />
           <InfoBadge icon={<QrCode size={16} />} label="QR + RA" />
         </div>
 
