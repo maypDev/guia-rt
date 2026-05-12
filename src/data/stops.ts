@@ -8,7 +8,7 @@ const BASE_URL = import.meta.env.BASE_URL;
  * Later, these data will feed the map, timeline cards, stop details,
  * audio players, and AR buttons.
  *
- * Important:
+ * Important: 
  * Replace coordinates, image paths, audio paths, and AR links
  * with the final real data when available.
  */
