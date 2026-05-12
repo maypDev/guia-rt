@@ -1,8 +1,6 @@
 import type { RouteStop } from "../types/route";
 const BASE_URL = import.meta.env.BASE_URL;
 
-
-
 /**
  * Tourism route stops
  *
