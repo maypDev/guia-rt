@@ -72,12 +72,6 @@ export function HeroSection() {
           </a>
         </div>
 
-        {/* Feature preview cards */}
-        {/* <div className="mt-12 grid w-full max-w-3xl grid-cols-3 gap-3">
-          <FeatureCard title="Mapa" description="Recorrido guiado" />
-          <FeatureCard title="Audio" description="Relatos breves" />
-          <FeatureCard title="RA" description="Contenido digital" />
-        </div> */}
       </div>
     </section>
   );
@@ -97,24 +91,6 @@ function InfoBadge({
     <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-[#F8F4EA] backdrop-blur-md transition-all duration-300 hover:border-[#C9A24D]/60 hover:bg-[#C9A24D]/10 hover:text-[#C9A24D]">
       <span className="text-[#C9A24D]">{icon}</span>
       {label}
-    </div>
-  );
-}
-
-/**
- * Small feature card displayed at the bottom of the hero section.
- */
-function FeatureCard({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-left backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#C9A24D]/50 hover:bg-[#C9A24D]/10">
-      <p className="text-sm font-bold text-[#F8F4EA]">{title}</p>
-      <p className="mt-1 text-xs text-[#E8D8B8]/70">{description}</p>
     </div>
   );
 }
