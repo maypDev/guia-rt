@@ -88,7 +88,7 @@ export const routeStops: RouteStop[] = [
     coordinates: [-17.9740178, -67.1100848],
     image: `${BASE_URL}/images/estacion-trenes.png`,
     audioUrl: `${BASE_URL}/audios/05-estacion.mp3`,
-    arUrl: "https://www.kivicube.com/scenes/laiK1053QlHBiurufv2hvUDuES5Z8dXU",
+    arUrl: "https://www.kivicube.com/face-scenes/iG7DVJ925CPww9q2HogremXbqw1Jns3e",
     markerImage: `${BASE_URL}/markers/marker-estacion.jpeg`,
     googleMapsUrl: "https://www.google.com/maps/place/Estaci%C3%B3n+de+Trenes/@-17.9740178,-67.1100848,17z/data=!4m14!1m7!3m6!1s0x93e2b0b8e7583359:0x519d777361ae5745!2sEstaci%C3%B3n+de+Trenes!8m2!3d-17.9740178!4d-67.1100848!16s%2Fg%2F1tdrydf5!3m5!1s0x93e2b0b8e7583359:0x519d777361ae5745!8m2!3d-17.9740178!4d-67.1100848!16s%2Fg%2F1tdrydf5?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D",
     duration: "30 min",
