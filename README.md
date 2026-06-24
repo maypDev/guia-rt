@@ -105,7 +105,7 @@ Notas:
 
 * `git push` actualiza la rama principal del repositorio.
 * `npm run deploy` actualiza la versión publicada en GitHub Pages.
-* Después del deploy, esperar unos minutos y refrescar la página.
+* Después del deploy, esperar unos minutos y refrescar la página. 
 
 URL publicada:
 
