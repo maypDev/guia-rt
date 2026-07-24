@@ -10,20 +10,37 @@ import type { RoutePathCoordinate } from "../types/route";
  * followed by the route.
  */
 export const routePathCoordinates: RoutePathCoordinate[] = [
-  // Segment 1: Parque Magdalena Postel → Museo Histórico
-  [-17.970818, -67.1179976],
-  [-17.9714081, -67.1161356],
+  // Segment 1: Parque Bolivar → Museo Madre Nazaria
 
-  // Segment 2: Museo Histórico → Colegio Nacional Simón Bolívar
-  [-17.9716389,-67.1154738], 
-  [-17.9719164, -67.1154738], //Colegio Bolívar
+  [-17.971400, -67.115422],
 
-  // Segment 3: Colegio Bolívar → Museo Madre Nazaria
-  [-17.9716389,-67.1154738],
+  [-17.9715389,-67.1154738],
   [-17.971951, -67.114150],
   [-17.9716662, -67.1141334], //Museo Madre Nazaria
 
-  // Segment 4: Museo Madre Nazaria → Playa de Estacionamiento
+  // Segment 1: Museo Madre Nazaria -> plaza castro
+  [-17.970087, -67.113530],
+  [-17.969633, -67.114675],
+  [-17.969919, -67.115242],
+
+  [-17.971472, -67.115901],
+
+
+
+
+
+  [-17.9714081, -67.1161356],
+
+  // // Segment 2: Museo Histórico → Colegio Nacional Simón Bolívar
+  [-17.9716389,-67.1154738], 
+  [-17.9719164, -67.1154738], //Colegio Bolívar
+
+  // // Segment 3: Colegio Bolívar → Museo Madre Nazaria
+  [-17.9716389,-67.1154738],
+  [-17.971951, -67.114150],
+  // [-17.9716662, -67.1141334], //Museo Madre Nazaria
+
+  // // Segment 4: Museo Madre Nazaria → Playa de Estacionamiento
   [-17.971951, -67.114150],
   [-17.973086, -67.110290],
   [-17.974017, -67.110515],
